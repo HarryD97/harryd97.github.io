@@ -41,53 +41,27 @@ pygmentsUseClasses = true
       description = "一个现代化的双语博客，分享技术见解和生活感悟。"
 
 # Theme
-theme = "PaperMod"
+theme = "hextra"
 
 # Site parameters
 [params]
   author = "Harry"
-  # PaperMod theme parameters
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = false
-  tocopen = false
-
-  # Analytics (replace with your tracking ID)
-  # googleAnalytics = "G-XXXXXXXXXX"  # Uncomment and add your GA4 ID
   
-  # Search
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    keys = ["title", "permalink", "summary", "content"]
-
-  # Social media links
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/harryd97"
-
-  # [[params.socialIcons]]
-  #   name = "twitter"
-  #   url = "https://twitter.com/your_twitter"
-
-  # [[params.socialIcons]]
-  #   name = "linkedin"
-  #   url = "https://linkedin.com/in/your_linkedin"
+  # Hextra theme parameters
+  [params.theme]
+    default = "system"
+    displayToggle = true
+  
+  [params.navbar]
+    displayLogo = true
+    width = "wide"
+  
+  [params.search]
+    enable = true
+    type = "flexsearch"
+  
+  [params.editPage]
+    enable = false
 
 # Menu configuration
 [languages.en.menu]
