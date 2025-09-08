@@ -1,0 +1,14 @@
+{{- if .IsTranslated -}}
+<div class="language-switcher">
+  <span class="language-label">{{ i18n "language" | default "Language" }}:</span>
+  {{- range .Translations -}}
+  <a href="{{ .Permalink }}" class="language-link {{ if eq .Language.Lang $.Language.Lang }}current{{ end }}" 
+     title="{{ .Language.LanguageName }}">
+    {{ .Language.LanguageName }}
+  </a>
+  {{- end -}}
+  <a href="{{ .Permalink }}" class="language-link current" title="{{ .Language.LanguageName }}">
+    {{ .Language.LanguageName }}
+  </a>
+</div>
+{{- end -}}

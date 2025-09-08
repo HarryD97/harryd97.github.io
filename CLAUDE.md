@@ -4,64 +4,78 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Jekyll-based blog/website using the Minima theme, hosted on GitHub Pages. The site supports both Chinese (default) and English content.
+This is a Hugo-based blog/website using the Ananke theme, hosted on GitHub Pages. The site supports both Chinese and English content with Hugo's built-in multilingual features.
 
 ## Architecture
 
-- **Jekyll Static Site**: Uses Jekyll with the Minima theme configured in `_config.yml`
+- **Hugo Static Site**: Uses Hugo with the Ananke theme configured in `hugo.toml`
 - **Bilingual Support**: 
-  - Default content in Chinese (`_posts/`, root `index.md`)
-  - English content in dedicated directories (`_posts_en/`, `en/`)
-- **GitHub Pages Deployment**: Automated via GitHub Actions workflow (`.github/workflows/jekyll-gh-pages.yml`)
+  - Content files use language suffixes (`.en.md`, `.zh.md`)
+  - English as default language, Chinese as secondary
+  - Automatic language switching and SEO optimization
+- **GitHub Pages Deployment**: Can use GitHub Actions workflow for Hugo deployment
 
 ## Directory Structure
 
-- `_posts/` - Chinese blog posts
-- `_posts_en/` - English blog posts  
-- `_layouts/` - Jekyll page layouts (currently empty)
-- `_includes/` - Reusable Jekyll components (currently empty)
-- `_sass/` - Sass stylesheets (currently empty)
-- `_data/` - YAML data files (currently empty)
-- `assets/` - Static assets organized by type:
-  - `css/` - Custom stylesheets
-  - `js/` - JavaScript files
-  - `images/` - Image assets
-- `en/` - English version pages
+- `content/` - Hugo content files
+  - `posts/` - Blog posts with language suffixes
+    - `*.en.md` - English posts
+    - `*.zh.md` - Chinese posts
+  - `about.en.md` - English about page
+  - `about.zh.md` - Chinese about page
+  - `_index.en.md` - English homepage
+  - `_index.zh.md` - Chinese homepage
+- `layouts/` - Custom Hugo layouts and partials
+- `themes/` - Hugo themes (Ananke)
+- `static/` - Static assets (images, CSS, JS)
+- `assets/` - Hugo assets for processing
+- `hugo.toml` - Main Hugo configuration
+
+### Legacy Jekyll Files (can be removed):
+- `_posts/`, `_posts_zh/` - Old Jekyll posts
+- `_layouts/`, `_includes/`, `_sass/` - Jekyll template files
+- `_config.yml` - Jekyll configuration
 
 ## Development Commands
 
-Since this is a Jekyll site without a Gemfile, use these commands:
+This is now a Hugo site with multilingual support:
 
 ### Local Development
 ```bash
-# Install Jekyll (if not already installed)
-gem install jekyll bundler
+# Install Hugo (if not already installed)
+brew install hugo
 
 # Serve site locally
-jekyll serve
+hugo server
+
+# Serve site with drafts
+hugo server --buildDrafts
 
 # Build site
-jekyll build
+hugo
 ```
 
 ### GitHub Pages Deployment
-- Deployment is automatic on push to `main` branch
-- Uses GitHub Actions workflow: `jekyll-gh-pages.yml`
-- No manual deployment commands needed
+- Can use GitHub Actions workflow for Hugo deployment
+- Alternatively, build locally and push to `gh-pages` branch
+- Hugo generates static files in `public/` directory
 
 ## Content Creation
 
 ### Blog Posts
-- Chinese posts: Place in `_posts/` with format `YYYY-MM-DD-title.md`
-- English posts: Place in `_posts_en/` with format `YYYY-MM-DD-title.md`
-- Use Jekyll front matter for metadata
+- Create posts in `content/posts/` directory
+- English posts: Use `.en.md` suffix (e.g., `my-post.en.md`)
+- Chinese posts: Use `.zh.md` suffix (e.g., `my-post.zh.md`)
+- Use Hugo front matter for metadata
 
 ### Static Pages
-- Chinese pages: Place in root directory
-- English pages: Place in `en/` directory
+- Place pages in `content/` directory
+- English pages: Use `.en.md` suffix (e.g., `about.en.md`)
+- Chinese pages: Use `.zh.md` suffix (e.g., `about.zh.md`)
 
 ## Theme Customization
-- Currently uses default Minima theme
-- Custom styles can be added to `assets/css/`
-- Custom JavaScript can be added to `assets/js/`
-- Theme overrides can be placed in `_layouts/`, `_includes/`, or `_sass/`
+- Currently uses Ananke theme
+- Custom layouts can be added to `layouts/` directory
+- Static assets go in `static/` directory
+- Processed assets go in `assets/` directory
+- Theme can be customized by overriding layouts and partials

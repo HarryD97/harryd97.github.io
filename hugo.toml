@@ -1,0 +1,67 @@
+baseURL = 'https://harryd97.github.io/'
+title = "Harry's Blog"
+
+# Language configuration
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# Multilingual configuration
+[languages]
+  [languages.en]
+    languageCode = "en-US"
+    languageName = "English"
+    title = "Harry's Blog"
+    weight = 1
+    [languages.en.params]
+      description = "A modern bilingual blog sharing tech insights and life experiences."
+    
+  [languages.zh]
+    languageCode = "zh-CN"
+    languageName = "中文"
+    title = "Harry 的博客"
+    weight = 2
+    [languages.zh.params]
+      description = "一个现代化的双语博客，分享技术见解和生活感悟。"
+
+# Theme
+theme = "ananke"
+
+# Site parameters
+[params]
+  author = "Harry"
+  github = "harryd97"
+
+# Menu configuration
+[languages.en.menu]
+  [[languages.en.menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[languages.en.menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+  [[languages.en.menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+[languages.zh.menu]
+  [[languages.zh.menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[languages.zh.menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[languages.zh.menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 3
+
+# Build configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

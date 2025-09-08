@@ -1,0 +1,31 @@
+# Hugo build files
+public/
+resources/
+.hugo_build.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jekyll backup (can remove after confirming everything works)
+backup-jekyll/
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Local environment
+.env
+.env.local

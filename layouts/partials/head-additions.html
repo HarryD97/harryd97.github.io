@@ -1,0 +1,51 @@
+<!-- Language and SEO Meta Tags -->
+<meta property="og:locale" content="{{ .Language.Lang }}" />
+{{- range .Translations -}}
+<meta property="og:locale:alternate" content="{{ .Language.Lang }}" />
+{{- end -}}
+
+<!-- Alternate Language Links -->
+{{- if .IsTranslated -}}
+{{- range .Translations -}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{- end -}}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{- end -}}
+
+<!-- Additional Custom Styles -->
+<style>
+.language-switcher {
+  margin: 1rem 0;
+  text-align: right;
+}
+
+.language-switcher .language-label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.language-link {
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+
+.language-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.language-link.current {
+  background-color: #007acc;
+  color: white;
+  border-color: #007acc;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .language-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+</style>
