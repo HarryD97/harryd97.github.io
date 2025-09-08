@@ -1,6 +1,6 @@
 # Hugo build files
 public/
-resources/
+resources/_gen/
 .hugo_build.lock
 
 # OS generated files
@@ -19,6 +19,8 @@ backup-jekyll/
 *.swp
 *.swo
 *~
+.vscode/
+.idea/
 
 # Logs
 *.log
@@ -29,3 +31,10 @@ node_modules/
 # Local environment
 .env
 .env.local
+
+# Hugo server port lock files
+.hugo_server.lock
+
+# Temporary files
+*.tmp
+*.temp

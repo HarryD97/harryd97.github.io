@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Hugo-based blog/website using the Ananke theme, hosted on GitHub Pages. The site supports both Chinese and English content with Hugo's built-in multilingual features.
+This is a Hugo-based blog/website using the PaperMod theme, hosted on GitHub Pages. The site supports both Chinese and English content with Hugo's built-in multilingual features.
 
 ## Architecture
 
-- **Hugo Static Site**: Uses Hugo with the Ananke theme configured in `hugo.toml`
+- **Hugo Static Site**: Uses Hugo with the PaperMod theme configured in `hugo.toml`
 - **Bilingual Support**: 
   - Content files use language suffixes (`.en.md`, `.zh.md`)
   - English as default language, Chinese as secondary
@@ -52,19 +52,21 @@ brew install hugo
 ./build.sh
 
 # Manual commands
-hugo server --theme ananke
-hugo server --theme ananke --buildDrafts
-hugo --theme ananke --minify
+hugo server --theme PaperMod
+hugo server --theme PaperMod --buildDrafts
+hugo --theme PaperMod --minify
 ```
 
 ### Important Notes
-- Hugo requires the `--theme ananke` parameter to work correctly
+- Hugo requires the `--theme PaperMod` parameter to work correctly
 - Use the provided scripts (`serve.sh` and `build.sh`) for convenience
+- PaperMod theme includes search functionality, dark mode, and analytics support
 
 ### GitHub Pages Deployment
-- Can use GitHub Actions workflow for Hugo deployment
-- Alternatively, build locally and push to `gh-pages` branch
-- Hugo generates static files in `public/` directory
+- **Automated**: GitHub Actions workflow (`.github/workflows/hugo.yml`) automatically builds and deploys on push to `main`
+- **Manual**: Run `./build.sh` locally and deploy `public/` directory
+- **Setup**: Enable GitHub Pages with "GitHub Actions" as source in repository settings
+- See `DEPLOYMENT_GUIDE.md` for detailed setup instructions
 
 ## Content Creation
 
