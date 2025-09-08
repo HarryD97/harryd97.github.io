@@ -45,15 +45,21 @@ This is now a Hugo site with multilingual support:
 # Install Hugo (if not already installed)
 brew install hugo
 
-# Serve site locally
-hugo server
+# Serve site locally (recommended - uses scripts)
+./serve.sh
 
-# Serve site with drafts
-hugo server --buildDrafts
+# Build site (recommended - uses script)
+./build.sh
 
-# Build site
-hugo
+# Manual commands
+hugo server --theme ananke
+hugo server --theme ananke --buildDrafts
+hugo --theme ananke --minify
 ```
+
+### Important Notes
+- Hugo requires the `--theme ananke` parameter to work correctly
+- Use the provided scripts (`serve.sh` and `build.sh`) for convenience
 
 ### GitHub Pages Deployment
 - Can use GitHub Actions workflow for Hugo deployment

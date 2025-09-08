@@ -30,6 +30,14 @@ theme = "ananke"
 [params]
   author = "Harry"
   github = "harryd97"
+  # Ananke theme specific parameters
+  featured_image = ""
+  recent_posts_number = 5
+  # Enable/disable theme features
+  show_reading_time = true
+  # Social media links
+  twitter = ""
+  linkedin = ""
 
 # Menu configuration
 [languages.en.menu]
