@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="{% if page.lang %}{{ page.lang }}{% else %}{{ site.language }}{% endif %}">
+<html lang="{% if page.lang %}{{ page.lang }}{% else %}en{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2563eb">
   
-  {% assign locale = site.data.locales[site.language] %}
-  {% if page.lang and page.lang != site.language %}
-    {% assign locale = site.data.locales[page.lang] %}
+  {% assign locale = site.data.locales.en %}
+  {% if page.lang and page.lang == 'zh' %}
+    {% assign locale = site.data.locales.zh %}
   {% endif %}
   
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ locale.site.title | default: site.title | escape }}</title>

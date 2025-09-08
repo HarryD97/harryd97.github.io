@@ -1,17 +1,17 @@
-title: "Harry's Blog | Harry的博客"
+title: "Harry's Blog"
 email: your-email@example.com
 description: >-
-  一个现代化的双语博客，分享技术见解和生活感悟。
   A modern bilingual blog sharing tech insights and life experiences.
+  一个现代化的双语博客，分享技术见解和生活感悟。
 
 # Base URL and site URL  
 baseurl: ""
 url: "https://harryd97.github.io"
 
 # Language settings
-language: "zh"
-languages: ["zh", "en"]
-default_lang: "zh"
+language: "en"
+languages: ["en", "zh"]
+default_lang: "en"
 
 # Multi-language settings
 plugins:
@@ -26,9 +26,9 @@ paginate_path: "/page:num/"
 
 # Collections for multi-language support
 collections:
-  posts_en:
+  posts_zh:
     output: true
-    permalink: /en/:year/:month/:day/:title/
+    permalink: /zh/:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
@@ -38,7 +38,7 @@ theme: minima
 # Navigation
 header_pages:
   - about.md
-  - en/about.md
+  - zh/about.md
 
 # Social links
 github_username: harryd97

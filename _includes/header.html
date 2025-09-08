@@ -1,13 +1,13 @@
-{% assign locale = site.data.locales[site.language] %}
-{% if page.lang and page.lang != site.language %}
-  {% assign locale = site.data.locales[page.lang] %}
+{% assign locale = site.data.locales.en %}
+{% if page.lang and page.lang == 'zh' %}
+  {% assign locale = site.data.locales.zh %}
 {% endif %}
 
 <header class="site-header">
   <div class="container">
     <div class="header-content">
       <div class="site-branding">
-        <a class="site-title" href="{% if page.lang == 'en' %}/en/{% else %}/{% endif %}">
+        <a class="site-title" href="{% if page.lang == 'zh' %}/zh/{% else %}/{% endif %}">
           {{ locale.site.title | default: site.title }}
         </a>
       </div>
@@ -15,27 +15,27 @@
       <nav class="site-nav">
         <ul class="nav-menu">
           <li class="nav-item">
-            <a class="nav-link" href="{% if page.lang == 'en' %}/en/{% else %}/{% endif %}">
+            <a class="nav-link" href="{% if page.lang == 'zh' %}/zh/{% else %}/{% endif %}">
               {{ locale.nav.home }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% if page.lang == 'en' %}/en/about/{% else %}/about/{% endif %}">
+            <a class="nav-link" href="{% if page.lang == 'zh' %}/zh/about/{% else %}/about/{% endif %}">
               {{ locale.nav.about }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% if page.lang == 'en' %}/en/posts/{% else %}/posts/{% endif %}">
+            <a class="nav-link" href="{% if page.lang == 'zh' %}/zh/posts/{% else %}/posts/{% endif %}">
               {{ locale.nav.posts }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% if page.lang == 'en' %}/en/categories/{% else %}/categories/{% endif %}">
+            <a class="nav-link" href="{% if page.lang == 'zh' %}/zh/categories/{% else %}/categories/{% endif %}">
               {{ locale.nav.categories }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% if page.lang == 'en' %}/en/tags/{% else %}/tags/{% endif %}">
+            <a class="nav-link" href="{% if page.lang == 'zh' %}/zh/tags/{% else %}/tags/{% endif %}">
               {{ locale.nav.tags }}
             </a>
           </li>
@@ -45,13 +45,14 @@
           <!-- Language switcher -->
           <div class="language-switcher">
             <button class="lang-toggle" aria-label="{{ locale.nav.language }}">
-              {% if page.lang == 'en' %}EN{% else %}中{% endif %}
+              {% if page.lang == 'zh' %}中{% else %}EN{% endif %}
             </button>
             <div class="lang-dropdown">
-              {% if page.lang == 'en' %}
-                <a href="{{ page.url | replace: '/en/', '/' }}" class="lang-option">中文</a>
+              {% if page.lang == 'zh' %}
+                {% assign english_url = page.url | replace: '/zh/', '/' %}
+                <a href="{{ english_url }}" class="lang-option">English</a>
               {% else %}
-                <a href="/en{{ page.url }}" class="lang-option">English</a>
+                <a href="/zh{{ page.url }}" class="lang-option">中文</a>
               {% endif %}
             </div>
           </div>

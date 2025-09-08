@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 分类
+title: Categories
 permalink: /categories/
 ---
 
-{% assign locale = site.data.locales[site.language] %}
+{% assign locale = site.data.locales.en %}
 
 <div class="container">
   <header class="page-header">
     <h1 class="page-title">{{ locale.nav.categories }}</h1>
-    <p class="page-description">按分类浏览文章</p>
+    <p class="page-description">Browse posts by category</p>
   </header>
 
   <div class="categories-page">
@@ -58,7 +58,7 @@ permalink: /categories/
             {% if category[1].size > 6 %}
               <div class="view-more">
                 <button class="btn btn-secondary view-more-btn" data-category="{{ category[0] | slugify }}">
-                  查看更多文章
+                  View More Posts
                 </button>
               </div>
             {% endif %}
@@ -67,7 +67,7 @@ permalink: /categories/
       </div>
     {% else %}
       <div class="empty-state">
-        <p>暂无分类文章。</p>
+        <p>No categorized posts yet.</p>
       </div>
     {% endif %}
   </div>
@@ -120,22 +120,3 @@ permalink: /categories/
   color: var(--text-muted);
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const viewMoreButtons = document.querySelectorAll('.view-more-btn');
-  
-  viewMoreButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const categoryId = this.dataset.category;
-      const categorySection = document.getElementById(categoryId);
-      const postsGrid = categorySection.querySelector('.posts-grid');
-      
-      // This would typically load more posts via AJAX
-      // For now, just show a message
-      this.textContent = '已显示所有文章';
-      this.disabled = true;
-    });
-  });
-});
-</script>

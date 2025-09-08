@@ -1,61 +1,61 @@
 ---
 layout: page
-title: 关于我
+title: About Me
 permalink: /about/
 ---
 
-# 你好，我是 Harry 👋
+# Hi, I'm Harry 👋
 
-欢迎来到我的个人博客！我是一名充满热情的开发者，喜欢探索新技术，分享学习心得，记录生活点滴。
+Welcome to my personal blog! I'm a passionate developer who loves exploring new technologies, sharing learning experiences, and documenting life's moments.
 
-## 🚀 我的技术栈
+## 🚀 My Tech Stack
 
-- **前端开发**: HTML, CSS, JavaScript, React, Vue.js
-- **后端开发**: Node.js, Python, Java
-- **数据库**: MySQL, PostgreSQL, MongoDB
-- **工具与平台**: Git, Docker, AWS, Jenkins
-- **其他**: 机器学习, 数据分析, UI/UX 设计
+- **Frontend Development**: HTML, CSS, JavaScript, React, Vue.js
+- **Backend Development**: Node.js, Python, Java
+- **Databases**: MySQL, PostgreSQL, MongoDB
+- **Tools & Platforms**: Git, Docker, AWS, Jenkins
+- **Other**: Machine Learning, Data Analysis, UI/UX Design
 
-## 📝 博客内容
+## 📝 Blog Content
 
-在这个博客中，你会发现：
+In this blog, you'll find:
 
-- **技术文章**: 编程技巧、最佳实践、新技术探索
-- **项目分享**: 有趣的开源项目和个人作品
-- **学习笔记**: 读书心得、在线课程总结
-- **生活感悟**: 工作经验、职业发展思考
-- **工具推荐**: 提高效率的软件和服务
+- **Technical Articles**: Programming tips, best practices, new technology exploration
+- **Project Sharing**: Interesting open-source projects and personal works
+- **Learning Notes**: Book reviews, online course summaries
+- **Life Insights**: Work experiences, career development thoughts
+- **Tool Recommendations**: Efficient software and services
 
-## 🎯 我的目标
+## 🎯 My Goals
 
-- 持续学习新技术，跟上时代步伐
-- 分享知识，帮助其他开发者成长
-- 建立技术社区，与志同道合的朋友交流
-- 记录成长历程，留下珍贵回忆
+- Continuously learn new technologies and stay current
+- Share knowledge and help other developers grow
+- Build a tech community and connect with like-minded friends
+- Document growth journey and preserve precious memories
 
-## 📫 联系方式
+## 📫 Contact Me
 
-如果你想与我交流，可以通过以下方式联系我：
+If you'd like to connect with me, you can reach out through:
 
-- **邮箱**: [your-email@example.com](mailto:your-email@example.com)
+- **Email**: [your-email@example.com](mailto:your-email@example.com)
 - **GitHub**: [@harryd97](https://github.com/harryd97)
 - **Twitter**: [@your_twitter](https://twitter.com/your_twitter)
 - **LinkedIn**: [your-linkedin](https://linkedin.com/in/your_linkedin)
 
-## 🎨 关于这个网站
+## 🎨 About This Website
 
-这个博客使用 Jekyll 构建，托管在 GitHub Pages 上。它具有以下特性：
+This blog is built with Jekyll and hosted on GitHub Pages. It features:
 
-- ✨ 现代化的响应式设计
-- 🌙 深色/浅色主题切换
-- 🔍 全站搜索功能
-- 🌐 中英文双语支持
-- 📱 移动端优化
-- ⚡ 快速加载速度
-- 📊 SEO 优化
+- ✨ Modern responsive design
+- 🌙 Dark/light theme toggle
+- 🔍 Full-site search functionality
+- 🌐 Bilingual support (English/Chinese)
+- 📱 Mobile optimization
+- ⚡ Fast loading speed
+- 📊 SEO optimization
 
-感谢你的访问，希望你在这里能找到有用的内容！如果有任何建议或问题，欢迎随时联系我。
+Thank you for visiting! I hope you find useful content here. If you have any suggestions or questions, feel free to contact me anytime.
 
 ---
 
-*最后更新：{{ 'now' | date: "%Y年%m月%d日" }}*
+*Last updated: {{ 'now' | date: "%B %d, %Y" }}*

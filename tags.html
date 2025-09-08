@@ -1,15 +1,15 @@
 ---
 layout: default
-title: 标签
+title: Tags
 permalink: /tags/
 ---
 
-{% assign locale = site.data.locales[site.language] %}
+{% assign locale = site.data.locales.en %}
 
 <div class="container">
   <header class="page-header">
     <h1 class="page-title">{{ locale.nav.tags }}</h1>
-    <p class="page-description">按标签浏览文章</p>
+    <p class="page-description">Browse posts by tags</p>
   </header>
 
   <div class="tags-page">
@@ -17,7 +17,7 @@ permalink: /tags/
     {% if tags.size > 0 %}
       <!-- Tags cloud -->
       <div class="tags-cloud-section">
-        <h2>所有标签</h2>
+        <h2>All Tags</h2>
         <div class="tags-cloud-large">
           {% for tag in tags %}
             <a href="#{{ tag[0] | slugify }}" class="tag-cloud-item" data-count="{{ tag[1] | size }}">
@@ -74,7 +74,7 @@ permalink: /tags/
       </div>
     {% else %}
       <div class="empty-state">
-        <p>暂无标签文章。</p>
+        <p>No tagged posts yet.</p>
       </div>
     {% endif %}
   </div>
@@ -194,20 +194,3 @@ permalink: /tags/
   color: var(--text-muted);
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll to tag sections
-  const tagLinks = document.querySelectorAll('.tag-cloud-item[href^="#"]');
-  tagLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-});
-</script>
