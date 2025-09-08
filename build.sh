@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build Hugo site with PaperMod theme
-echo "Building Hugo site with PaperMod theme..."
-hugo --theme PaperMod --minify
+# Build Hugo site with Hextra theme
+echo "Building Hugo site with Hextra theme..."
+hugo --theme hextra --minify
 echo "Site built successfully in public/ directory"

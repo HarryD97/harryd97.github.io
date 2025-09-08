@@ -2,7 +2,7 @@
 title: "现代 CSS 技巧：构建响应式布局的最佳实践"
 date: 2024-02-01T14:30:00+08:00
 draft: false
-categories: ["前端开发"]
+categories: ["Frontend Development"]
 tags: ["CSS", "响应式设计", "Grid", "Flexbox"]
 summary: "深入探讨现代 CSS 布局技术，包括 CSS Grid、Flexbox 和自定义属性的实际应用。"
 ---

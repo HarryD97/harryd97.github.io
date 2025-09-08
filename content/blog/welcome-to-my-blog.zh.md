@@ -2,7 +2,7 @@
 title: "欢迎来到我的博客"
 date: 2024-01-15T10:00:00+08:00
 draft: false
-categories: ["生活"]
+categories: ["Life"]
 tags: ["博客", "开始", "介绍"]
 summary: "这是我博客的第一篇文章，让我来介绍一下这个博客的创建过程和未来计划。"
 ---

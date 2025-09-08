@@ -1,0 +1,171 @@
+baseURL: 'https://harryd97.github.io/'
+title: "Harry's Tech Blog"
+
+# Language configuration
+defaultContentLanguage: "en"
+enableRobotsTXT: true
+enableEmoji: true
+hasCJKLanguage: true
+
+# Pagination
+pagination:
+  pagerSize: 10
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Output formats for blog
+outputs:
+  home: [html, rss]
+  page: [html]
+  section: [html, rss]
+  taxonomy: [html, rss]
+  term: [html, rss]
+
+# Theme
+theme: hextra
+
+# Taxonomy configuration - Categories always in English
+taxonomies:
+  category: categories
+  tag: tags
+
+# URL configuration - Categories in English
+permalinks:
+  posts: '/blog/:slug/'
+  categories: '/category/:slug/'
+  tags: '/tag/:slug/'
+
+# Multilingual configuration
+languages:
+  en:
+    languageCode: "en-US"
+    languageName: "English"
+    title: "Harry's Tech Blog"
+    weight: 1
+    params:
+      description: "A modern tech blog sharing programming insights, tutorials, and development experiences."
+    menu:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 1
+        - name: "Blog"
+          pageRef: "/blog/"
+          weight: 2
+        - name: "Categories"
+          pageRef: "/categories/"
+          weight: 3
+        - name: "Tags"
+          pageRef: "/tags/"
+          weight: 4
+        - name: "About"
+          pageRef: "/about/"
+          weight: 5
+        - name: "Search"
+          weight: 6
+          params:
+            type: search
+    
+  zh:
+    languageCode: "zh-CN"
+    languageName: "中文"
+    title: "Harry 的技术博客"
+    weight: 2
+    params:
+      description: "现代化的技术博客，分享编程见解、教程和开发经验。"
+    menu:
+      main:
+        - name: "首页"
+          pageRef: "/"
+          weight: 1
+        - name: "博客"
+          pageRef: "/blog/"
+          weight: 2
+        - name: "分类"
+          pageRef: "/categories/"
+          weight: 3
+        - name: "标签"
+          pageRef: "/tags/"
+          weight: 4
+        - name: "关于"
+          pageRef: "/about/"
+          weight: 5
+        - name: "搜索"
+          weight: 6
+          params:
+            type: search
+
+# Site parameters
+params:
+  description: "A modern tech blog sharing programming insights, tutorials, and development experiences."
+  author: "Harry"
+  
+  # Blog configuration
+  blog:
+    list:
+      displayTags: true
+      displayCategories: true
+      sortBy: date
+      sortOrder: desc
+      pagerSize: 10
+      showSummary: true
+    
+    article:
+      displayPagination: true
+      displayTags: true
+      displayCategories: true
+      displayDate: true
+      displayAuthor: true
+      displayReadingTime: true
+  
+  # Hextra theme parameters
+  theme:
+    default: system
+    displayToggle: true
+  
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    width: wide
+  
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+      tokenize: forward
+  
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: false
+  
+  page:
+    width: normal
+  
+  # Table of Contents
+  toc:
+    enable: true
+    displayTags: true
+  
+  # Code highlighting
+  highlight:
+    copy:
+      enable: true
+      display: hover
+
+# Build configuration
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    style: github
+    lineNos: true
+    lineNumbersInTable: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
