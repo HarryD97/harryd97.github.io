@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+{% assign locale = site.data.locales[site.language] %}
+{% if page.lang and page.lang != site.language %}
+  {% assign locale = site.data.locales[page.lang] %}
+{% endif %}
+
+<div class="home-page">
+  <div class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">{{ locale.site.title | default: site.title }}</h1>
+      <p class="hero-description">{{ locale.site.description | default: site.description }}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-grid">
+      <section class="posts-section">
+        <h2 class="section-title">{{ locale.general.recent_posts }}</h2>
+        
+        {% if page.lang == 'en' %}
+          {% assign posts = site.posts_en %}
+        {% else %}
+          {% assign posts = site.posts %}
+        {% endif %}
+        
+        {% if posts.size > 0 %}
+          <div class="posts-grid">
+            {% for post in posts limit:6 %}
+              <article class="post-card">
+                <div class="post-meta">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%Y-%m-%d" }}
+                  </time>
+                  {% if post.category %}
+                    <span class="post-category">{{ post.category }}</span>
+                  {% endif %}
+                </div>
+                
+                <h3 class="post-title">
+                  <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                </h3>
+                
+                {% if post.excerpt %}
+                  <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                {% endif %}
+                
+                {% if post.tags.size > 0 %}
+                  <div class="post-tags">
+                    {% for tag in post.tags limit:3 %}
+                      <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                
+                <a href="{{ post.url | relative_url }}" class="read-more-link">
+                  {{ locale.general.read_more }} →
+                </a>
+              </article>
+            {% endfor %}
+          </div>
+          
+          {% if posts.size > 6 %}
+            <div class="view-all-posts">
+              <a href="{% if page.lang == 'en' %}/en/posts/{% else %}/posts/{% endif %}" class="btn btn-primary">
+                View All Posts
+              </a>
+            </div>
+          {% endif %}
+        {% else %}
+          <p class="no-posts">No posts available yet.</p>
+        {% endif %}
+      </section>
+
+      <aside class="sidebar">
+        {% include sidebar.html %}
+      </aside>
+    </div>
+  </div>
+</div>

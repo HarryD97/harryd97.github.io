@@ -1,0 +1,46 @@
+# English language configuration
+site:
+  title: "Harry's Blog"
+  description: "A modern tech blog sharing programming experiences and life insights"
+  
+nav:
+  home: "Home"
+  about: "About"
+  posts: "Posts"
+  categories: "Categories"
+  tags: "Tags"
+  archive: "Archive"
+  search: "Search"
+  language: "Language"
+  
+post:
+  posted_on: "Posted on"
+  updated_on: "Updated on"
+  read_time: "Read time"
+  minute: "minute"
+  minutes: "minutes"
+  words: "words"
+  share: "Share"
+  related_posts: "Related Posts"
+  previous: "Previous"
+  next: "Next"
+  tags: "Tags"
+  category: "Category"
+  
+general:
+  read_more: "Read More"
+  recent_posts: "Recent Posts"
+  older_posts: "Older Posts"
+  newer_posts: "Newer Posts"
+  page_of: "Page %{current} of %{total}"
+  back_to_top: "Back to Top"
+  toggle_theme: "Toggle Theme"
+  
+footer:
+  powered_by: "Powered by Jekyll"
+  theme: "Theme"
+  
+search:
+  placeholder: "Search posts..."
+  no_results: "No posts found"
+  results: "Search Results"

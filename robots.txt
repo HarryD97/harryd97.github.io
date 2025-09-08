@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/feed.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/en/feed.xml
+
+# Disallow certain paths if needed
+# Disallow: /private/
+# Disallow: /admin/

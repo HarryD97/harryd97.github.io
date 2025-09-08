@@ -1,1 +1,4 @@
-# 我的博客
+---
+layout: home
+title: 首页
+---

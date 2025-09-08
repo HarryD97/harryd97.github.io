@@ -1,0 +1,67 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- English homepage -->
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/en/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Static pages -->
+  {% for page in site.pages %}
+    {% unless page.sitemap == false or page.url contains 'feed.xml' %}
+      <url>
+        <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+        {% if page.last_modified_at %}
+          <lastmod>{{ page.last_modified_at | date_to_xmlschema }}</lastmod>
+        {% else %}
+          <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        {% endif %}
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    {% endunless %}
+  {% endfor %}
+  
+  <!-- Chinese posts -->
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+      {% if post.last_modified_at %}
+        <lastmod>{{ post.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+  
+  <!-- English posts -->
+  {% for post in site.posts_en %}
+    <url>
+      <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+      {% if post.last_modified_at %}
+        <lastmod>{{ post.last_modified_at | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  {% endfor %}
+  
+</urlset>

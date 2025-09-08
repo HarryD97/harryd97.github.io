@@ -1,1 +1,75 @@
+title: "Harry's Blog | Harry的博客"
+email: your-email@example.com
+description: >-
+  一个现代化的双语博客，分享技术见解和生活感悟。
+  A modern bilingual blog sharing tech insights and life experiences.
+
+# Base URL and site URL  
+baseurl: ""
+url: "https://harryd97.github.io"
+
+# Language settings
+language: "zh"
+languages: ["zh", "en"]
+default_lang: "zh"
+
+# Multi-language settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Collections for multi-language support
+collections:
+  posts_en:
+    output: true
+    permalink: /en/:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
 theme: minima
+
+# Navigation
+header_pages:
+  - about.md
+  - en/about.md
+
+# Social links
+github_username: harryd97
+twitter_username: your_twitter
+linkedin_username: your_linkedin
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Comments (optional)
+# disqus:
+#   shortname: your_disqus_shortname
+
+# SEO settings
+author:
+  name: Harry
+  email: your-email@example.com
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CLAUDE.md
+
+# Include future posts
+future: false
+
+# Timezone
+timezone: Asia/Shanghai

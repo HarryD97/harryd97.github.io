@@ -1,0 +1,120 @@
+{% assign locale = site.data.locales[site.language] %}
+{% if page.lang and page.lang != site.language %}
+  {% assign locale = site.data.locales[page.lang] %}
+{% endif %}
+
+<div class="sidebar">
+  <!-- Recent Posts -->
+  <div class="sidebar-widget">
+    <h3 class="widget-title">{{ locale.general.recent_posts }}</h3>
+    <ul class="recent-posts">
+      {% if page.lang == 'en' %}
+        {% assign posts = site.posts_en %}
+      {% else %}
+        {% assign posts = site.posts %}
+      {% endif %}
+      
+      {% for post in posts limit:5 %}
+        <li class="recent-post">
+          <a href="{{ post.url | relative_url }}">{{ post.title | truncate: 60 }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%m-%d" }}
+          </time>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Categories -->
+  {% assign categories = site.categories %}
+  {% if page.lang == 'en' %}
+    {% assign categories = site.posts_en | map: 'category' | compact | uniq %}
+  {% endif %}
+  
+  {% if categories.size > 0 %}
+    <div class="sidebar-widget">
+      <h3 class="widget-title">{{ locale.nav.categories }}</h3>
+      <div class="categories-cloud">
+        {% if page.lang == 'en' %}
+          {% for category in categories %}
+            {% assign count = site.posts_en | where: 'category', category | size %}
+            <a href="{% if page.lang == 'en' %}/en/categories/#{{ category | slugify }}{% else %}/categories/#{{ category | slugify }}{% endif %}" 
+               class="category-tag">
+              {{ category }} ({{ count }})
+            </a>
+          {% endfor %}
+        {% else %}
+          {% for category in site.categories %}
+            <a href="/categories/#{{ category[0] | slugify }}" class="category-tag">
+              {{ category[0] }} ({{ category[1] | size }})
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Tags Cloud -->
+  {% assign tags = site.tags %}
+  {% if page.lang == 'en' %}
+    {% assign all_tags = site.posts_en | map: 'tags' | join: ',' | split: ',' | compact | uniq %}
+    {% assign tags = all_tags %}
+  {% endif %}
+  
+  {% if tags.size > 0 %}
+    <div class="sidebar-widget">
+      <h3 class="widget-title">{{ locale.nav.tags }}</h3>
+      <div class="tags-cloud">
+        {% if page.lang == 'en' %}
+          {% for tag in tags limit:20 %}
+            {% assign count = site.posts_en | where_exp: 'post', 'post.tags contains tag' | size %}
+            <a href="{% if page.lang == 'en' %}/en/tags/#{{ tag | slugify }}{% else %}/tags/#{{ tag | slugify }}{% endif %}" 
+               class="tag">
+              #{{ tag }}
+            </a>
+          {% endfor %}
+        {% else %}
+          {% for tag in site.tags limit:20 %}
+            <a href="/tags/#{{ tag[0] | slugify }}" class="tag">
+              #{{ tag[0] }}
+            </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  <!-- Archive -->
+  <div class="sidebar-widget">
+    <h3 class="widget-title">{{ locale.nav.archive }}</h3>
+    <ul class="archive-list">
+      {% if page.lang == 'en' %}
+        {% assign posts = site.posts_en %}
+      {% else %}
+        {% assign posts = site.posts %}
+      {% endif %}
+      
+      {% for post in posts %}
+        {% assign current_year = post.date | date: "%Y" %}
+        {% assign current_month = post.date | date: "%m" %}
+        {% unless forloop.first %}
+          {% assign previous_year = posts[forloop.index0 - 1].date | date: "%Y" %}
+          {% assign previous_month = posts[forloop.index0 - 1].date | date: "%m" %}
+        {% endunless %}
+        
+        {% if forloop.first or current_year != previous_year or current_month != previous_month %}
+          {% unless forloop.first %}</ul></li>{% endunless %}
+          <li class="archive-year-month">
+            <a href="{% if page.lang == 'en' %}/en/archive/#{{ current_year }}-{{ current_month }}{% else %}/archive/#{{ current_year }}-{{ current_month }}{% endif %}">
+              {{ post.date | date: "%Y-%m" }}
+            </a>
+            <ul class="archive-posts">
+        {% endif %}
+        
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        
+        {% if forloop.last %}</ul></li>{% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
